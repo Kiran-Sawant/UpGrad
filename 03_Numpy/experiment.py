@@ -1,13 +1,36 @@
+#%%
 import numpy as np
 
-height: list[int] = [[74], [2], [3]]
-weight: list[int] = [[54, 64, 57]]
+#%%
+matrix_one = np.array((range(1, 8*8+1)))
+matrix_one
 
-np_height = np.array(height)
-np_weight = np.array(weight)
+# %%
+matrix_2 = np.reshape(matrix_one, (8, 8))
+# %%
+matrix_2[:3, -5:]
+# %%
+n = 7
 
-print(np_height)
-print(np_weight)
-# print(np_height.shape)
+mat_zero = np.zeros((n, n), dtype=int)
+mat_zero
 
-print(np_height + np_weight)
+# %%
+x, y = mat_zero.shape
+
+x_pos = x//2
+y_pos = y//2
+
+print(x_pos, y_pos)
+
+# %%
+for i in range(x):
+    for j in range(y):
+        if i == x_pos or j == y_pos:
+            mat_zero[i, j] += 1
+        
+
+# %%
+mat_zero
+
+# %%
